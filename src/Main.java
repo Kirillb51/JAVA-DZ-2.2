@@ -2,12 +2,14 @@ public class Main {
     public static void main(String[] args) {
         int account = 300;
         int replenishment = 2000;
-        int bonus = 1;
-        boolean replenisment = true;
+        int bonus;
         if (replenishment > 1000) {
-            System.out.println(account + replenishment + (replenishment / 100));
-            //Бонус при пополнении счета на сумму 2000= 20 бонусным рублям,при пополнении
-            // счета на сумму менее 1000 расчёт бонусов не производится.
+            bonus = replenishment / 100;
+        } else {
+            bonus = 0;
+
         }
+        int balance = account + replenishment + bonus;
+        System.out.println("Ваш баланс+бонус:" + balance);
     }
 }
